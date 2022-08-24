@@ -255,6 +255,3 @@
 # n = x.copy()
 # n.update(y)
 # print(n)
-
-# Тест переноса на linux
-x = {'a': 1, 'b': 2}
