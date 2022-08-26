@@ -255,3 +255,39 @@
 # n = x.copy()
 # n.update(y)
 # print(n)
+
+# Домашнее задание №12
+
+# dict_one = {1: 10, 2: 20}
+# dict_two = {3: 30, 4: 40}
+# dict_three = {5: 50, 6: 60}
+# merged_dict = dict_one | dict_two | dict_three
+# print(merged_dict)
+
+
+# dict_salary = {'emp1': {'name': 'Jhon', 'salary': 7500}, 'emp2': {'name': 'Emma', 'salary': 8000},
+#                'emp3': {'name': 'Brad', 'salary': 6500}}
+# print(dict_salary['emp3'])
+# print(dict_salary['emp3']['salary'])
+# salary = 8500
+# dict_salary['emp3']['salary'] = salary
+# for x in dict_salary:
+#     print(x)
+#     for y in dict_salary[x]:
+#         print(y, ": ", dict_salary[x][y], sep="")
+
+students = {}
+n = int(input("Количество студентов: "))
+s = 0
+for i in range(n):
+    student_name = input(str(i + 1) + "-й студент: ")
+    point = int(input("Балл: "))
+    students[student_name] = point
+    s += point
+quantity = s / n
+print("Средний балл: %.0f. Студенты с баллом выше среднего:" % quantity)
+for i in students:
+    if students[i] > quantity:
+        print(i)
+
+
