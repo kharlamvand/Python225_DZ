@@ -276,18 +276,41 @@
 #     for y in dict_salary[x]:
 #         print(y, ": ", dict_salary[x][y], sep="")
 
-students = {}
-n = int(input("Количество студентов: "))
-s = 0
-for i in range(n):
-    student_name = input(str(i + 1) + "-й студент: ")
-    point = int(input("Балл: "))
-    students[student_name] = point
-    s += point
-quantity = s / n
-print("Средний балл: %.0f. Студенты с баллом выше среднего:" % quantity)
-for i in students:
-    if students[i] > quantity:
-        print(i)
+# students = {}
+# n = int(input("Количество студентов: "))
+# s = 0
+# for i in range(n):
+#     student_name = input(str(i + 1) + "-й студент: ")
+#     point = int(input("Балл: "))
+#     students[student_name] = point
+#     s += point
+# quantity = s / n
+# print("Средний балл: %.0f. Студенты с баллом выше среднего:" % quantity)
+# for i in students:
+#     if students[i] > quantity:
+#         print(i)
 
-# Тест
+# Домашнее задание №13
+import math
+
+pi = math.pi
+
+
+def square(figure_type, **kwargs):
+    if figure_type == 'rhombus':
+        return kwargs['d1'] * kwargs['d2'] / 2
+    if figure_type == 'square':
+        return kwargs['a'] ** 2
+    if figure_type == 'trapezoid':
+        return 0.5 * (kwargs['a'] + kwargs['b']) * kwargs['h']
+    if figure_type == 'circle':
+        return pi * (kwargs['r'] ** 2)
+    else:
+        return 'Invalid data'
+
+
+print(square(figure_type='rhombus', d1=10, d2=8))
+print(square(figure_type='square', a=5))
+print(square(figure_type='trapezoid', a=12, b=3, h=6))
+print(square(figure_type='circle', r=18))
+print(square(figure_type='unknown', a=1, b=2, c=3))
