@@ -291,26 +291,60 @@
 #         print(i)
 
 # Домашнее задание №13
-import math
+# import math
+#
+# pi = math.pi
+#
+#
+# def square(figure_type, **kwargs):
+#     if figure_type == 'rhombus':
+#         return kwargs['d1'] * kwargs['d2'] / 2
+#     if figure_type == 'square':
+#         return kwargs['a'] ** 2
+#     if figure_type == 'trapezoid':
+#         return 0.5 * (kwargs['a'] + kwargs['b']) * kwargs['h']
+#     if figure_type == 'circle':
+#         return pi * (kwargs['r'] ** 2)
+#     else:
+#         return 'Invalid data'
+#
+#
+# print(square(figure_type='rhombus', d1=10, d2=8))
+# print(square(figure_type='square', a=5))
+# print(square(figure_type='trapezoid', a=12, b=3, h=6))
+# print(square(figure_type='circle', r=18))
+# print(square(figure_type='unknown', a=1, b=2, c=3))
 
-pi = math.pi
+# Домашнее задание №14
+
+# print((lambda x, y, z: x * y * z)(2, 5, 5))
 
 
-def square(figure_type, **kwargs):
-    if figure_type == 'rhombus':
-        return kwargs['d1'] * kwargs['d2'] / 2
-    if figure_type == 'square':
-        return kwargs['a'] ** 2
-    if figure_type == 'trapezoid':
-        return 0.5 * (kwargs['a'] + kwargs['b']) * kwargs['h']
-    if figure_type == 'circle':
-        return pi * (kwargs['r'] ** 2)
-    else:
-        return 'Invalid data'
+# students = [
+#     {'name': 'Jennifer', 'final': 95},
+#     {'name': 'David', 'final': 92},
+#     {'name': 'Nikolas', 'final': 98},
+# ]
+#
+# res1 = sorted(students, key=lambda item: item['name'])
+# print(res1)
+# res2 = sorted(students, key=lambda item: item['final'], reverse=True)
+# print(res2)
 
 
-print(square(figure_type='rhombus', d1=10, d2=8))
-print(square(figure_type='square', a=5))
-print(square(figure_type='trapezoid', a=12, b=3, h=6))
-print(square(figure_type='circle', r=18))
-print(square(figure_type='unknown', a=1, b=2, c=3))
+# students = [
+#     {'name': 'Jennifer', 'final': 95},
+#     {'name': 'David', 'final': 92},
+#     {'name': 'Nikolas', 'final': 98},
+# ]
+#
+# man_evaluation = max(students, key=lambda item: item['final'])
+# print(man_evaluation)
+#
+# min_evaluation = min(students, key=lambda item: item['final'])
+# print(min_evaluation)
+
+nums = [3, 5, 7, 3, 9, 5, 7, 2]
+
+print(list(map(lambda t: t ** 2, nums)))
+print(list(map(lambda t: t ** 3, nums)))
