@@ -344,7 +344,47 @@
 # min_evaluation = min(students, key=lambda item: item['final'])
 # print(min_evaluation)
 
-nums = [3, 5, 7, 3, 9, 5, 7, 2]
+# nums = [3, 5, 7, 3, 9, 5, 7, 2]
+#
+# print(list(map(lambda t: t ** 2, nums)))
+# print(list(map(lambda t: t ** 3, nums)))
 
-print(list(map(lambda t: t ** 2, nums)))
-print(list(map(lambda t: t ** 3, nums)))
+
+
+# Домашнее задание №17
+
+# my_str = "I am learning Python. hello, WORLD!"
+# a = my_str[:my_str.find("h")]
+# b = my_str[my_str.rfind("h") + 1:]
+# print(a + b)
+
+
+# my_str = "I am learning Python. hello, WORLD!"
+# a = my_str[:my_str.find('h')]
+# b = my_str[my_str.find('h'): my_str.rfind('h') + 1:]
+# c = my_str[my_str.rfind('h') + 1:]
+# my_str = a + b[::-1] + c
+# print(my_str)
+
+
+# print('Строка: ')
+# s = input()
+# print('Ее заменяемая подстрока: ')
+# a = input()
+# print('Новая подстрока: ')
+# b = input()
+#
+# i = s.find(a)
+# while i != -1:
+#     x = len(a)
+#     s = s[0:i] + b + s[i + x:]
+#     i = s.find(a)
+# print(s)
+
+my_str = "Ежевику для ежат Принесли два ежа. Ежевику еле-еле Ежата возле ели съели"
+my_str = my_str.split(" ")
+i = 0
+for x in my_str:
+    if x[0].lower() == "е":
+        i = i + 1
+print("Количество слов:", i)
