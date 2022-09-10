@@ -350,7 +350,6 @@
 # print(list(map(lambda t: t ** 3, nums)))
 
 
-
 # Домашнее задание №17
 
 # my_str = "I am learning Python. hello, WORLD!"
@@ -381,10 +380,18 @@
 #     i = s.find(a)
 # print(s)
 
-my_str = "Ежевику для ежат Принесли два ежа. Ежевику еле-еле Ежата возле ели съели"
-my_str = my_str.split(" ")
-i = 0
-for x in my_str:
-    if x[0].lower() == "е":
-        i = i + 1
-print("Количество слов:", i)
+# my_str = "Ежевику для ежат Принесли два ежа. Ежевику еле-еле Ежата возле ели съели"
+# my_str = my_str.split(" ")
+# i = 0
+# for x in my_str:
+#     if x[0].lower() == "е":
+#         i = i + 1
+# print("Количество слов:", i)
+
+
+# Домашнее задание №18
+
+import re
+
+s = "123456@i.ru, 123_456@ru.name.ru, login@i.ru, логин-1@i.ru, login.3@i.ru, login.3-67@i.ru, 1login@ru.name.ru"
+print(re.findall("[a-яA-Я0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+", s))
