@@ -13,6 +13,8 @@
 #             print(n, "копеек")
 # else:
 #     print("Ошибка")
+import re
+
 
 # Домашнее задание №3
 # n = input('\n1 - "r" - Применяет унарный минус '
@@ -390,8 +392,20 @@
 
 
 # Домашнее задание №18
-
+#
 import re
+#
+# s = "123456@i.ru, 123_456@ru.name.ru, login@i.ru, логин-1@i.ru, login.3@i.ru, login.3-67@i.ru, 1login@ru.name.ru"
+# print(re.findall("[a-яA-Я0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+", s))
 
-s = "123456@i.ru, 123_456@ru.name.ru, login@i.ru, логин-1@i.ru, login.3@i.ru, login.3-67@i.ru, 1login@ru.name.ru"
-print(re.findall("[a-яA-Я0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+", s))
+# Домашнее задание №19
+
+# def validate_password(password):
+#     return re.findall(r'^[a-zA-Z\d@_-]{8,18}$', password)
+#
+#
+# print(validate_password('my-p@ssw0rd'))
+
+s = "В июне 2021 года, 02/06/2021, 05/06/2021, 14/06/2021, были зафиксированны максимумы ужумесячных осадков."
+reg = r'\d{2}/\d{2}/\d{4}'
+print(re.findall(reg, s))
