@@ -413,15 +413,29 @@
 
 # Домашнее задание №20
 
-n = [-2, 3, 8, -11, -4, 6]
+# Рекурсия Вариант №1
+# def count(lst):
+#     if len(lst) == 1:
+#         if lst[0] < 1:
+#             return 1
+#         else:
+#             return 0
+#     else:
+#         if lst[0] < 1:
+#             return 1 + count(lst[1:])
+#         else:
+#             return count(lst[1:])
+#
+#
+# print("n = :", count([-2, 3, 8, -11, -4, 6]))
 
 
+# Рекурсия Вариант №2
 def count(lst):
-    x = 0
-    for i in n:
-        if i < 0:
-            x += 1
-    return x
+    return (1 if lst[0] < 0 else 0) + count(lst[1:]) if lst else 0
 
 
-print("n =", count(n))
+print("n = :", count([-2, 3, 8, -11, -4, 6]))
+
+
+
