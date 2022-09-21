@@ -431,11 +431,69 @@
 
 
 # Рекурсия Вариант №2
-def count(lst):
-    return (1 if lst[0] < 0 else 0) + count(lst[1:]) if lst else 0
+# def count(lst):
+#     return (1 if lst[0] < 0 else 0) + count(lst[1:]) if lst else 0
+#
+#
+# print("n = :", count([-2, 3, 8, -11, -4, 6]))
+#
 
+# Домашнее задание №21
 
-print("n = :", count([-2, 3, 8, -11, -4, 6]))
+# Задача 1
+# my_file = open("text.txt", "w")
+# my_file.write("Замена строки в текстовом файле;\nизменить строку в списке;\nзаписать список в файл;\n")
+# my_file.close()
+#
+# my_file = open("text.txt", "r")
+# read_file = my_file.readlines()
+# print(read_file)
+# read_file[1], read_file[2] = read_file[2], read_file[1]
+# print(read_file)
+# my_file.close()
+#
+# my_file = open("text.txt", "w")
+# my_file.writelines(read_file)
+# my_file.close()
 
+# Задача 2
 
+# my_file = open("text1.txt", "w")
+# my_file.write("Замена строки в текстовом файле;\nизменить строку в списке;\nзаписать список в файл;\n")
+# my_file.close()
+#
+# my_file = open("text1.txt", "r")
+# read_file = my_file.readlines()
+# print(read_file)
+# read_file1 = read_file[::-1]
+# print(read_file1)
+# my_file.close()
+#
+# my_file = open("text1.txt", "w")
+# my_file.writelines(read_file1)
+# my_file.close()
 
+# Задача 3
+
+# my_file = open("firstfile.txt", "w")
+# my_file.write("Привет, мир!")
+# my_file.close()
+# my_file = open("secondfile.txt", "w")
+# my_file.write("Hello world!")
+# my_file.close()
+# my_file = open("firstfile.txt", "w")
+# my_file.write(" ")
+# my_file.close()
+
+first_filename = "firstfile.txt"
+second_filename = "secondfile.txt"
+third_filename = "thirdfile.txt"
+
+with open(first_filename, 'r') as file:
+    first_file_content = file.read()
+
+with open(second_filename, 'r') as file:
+    second_file_content = file.read()
+
+with open(third_filename, 'w') as file:
+    file.write(first_file_content + second_file_content)
