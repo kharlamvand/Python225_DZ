@@ -485,15 +485,95 @@
 # my_file.write(" ")
 # my_file.close()
 
-first_filename = "firstfile.txt"
-second_filename = "secondfile.txt"
-third_filename = "thirdfile.txt"
+# first_filename = "firstfile.txt"
+# second_filename = "secondfile.txt"
+# third_filename = "thirdfile.txt"
+#
+# with open(first_filename, 'r') as file:
+#     first_file_content = file.read()
+#
+# with open(second_filename, 'r') as file:
+#     second_file_content = file.read()
+#
+# with open(third_filename, 'w') as file:
+#     file.write(first_file_content + second_file_content)
 
-with open(first_filename, 'r') as file:
-    first_file_content = file.read()
+# Домашнее задание №22
 
-with open(second_filename, 'r') as file:
-    second_file_content = file.read()
+class Book:
+    title_book = "title_book"
+    year_production = "year_production"
+    publisher = "publisher"
+    genre = "genre"
+    author = "author"
+    price = "price"
 
-with open(third_filename, 'w') as file:
-    file.write(first_file_content + second_file_content)
+    def print_info(self):
+        print("=" * 40)
+        print(f"Название книги: {self.title_book}\nГод выпуска: {self.year_production}\n"
+              f"Издание: {self.publisher}\nЖанр: {self.genre}\nАвтор: {self.author}\n"
+              f"Цена: {self.price}")
+        print("=" * 40)
+
+    def input_info(self, title_book, year_production, publisher, genre, author, price):
+        self.title_book = title_book
+        self.year_production = year_production
+        self.publisher = publisher
+        self.genre = genre
+        self.author = author
+        self.price = price
+
+    def set_title_book(self, title_book):
+        self.title_book = title_book
+
+    def get_title_book(self):
+        return self.title_book
+
+    def set_year_production(self, year_production):
+        self.year_production = year_production
+
+    def get_year_production(self):
+        return self.year_production
+
+    def set_publisher(self, publisher):
+        self.publisher = publisher
+
+    def get_publisher(self):
+        return self.publisher
+
+    def set_genre(self, genre):
+        self.genre = genre
+
+    def get_genre(self):
+        return self.genre
+
+    def set_author(self, author):
+        self.author = author
+
+    def get_author(self):
+        return self.author
+
+    def set_price(self, price):
+        self.price = price
+
+    def get_price(self):
+        return self.price
+
+
+b1 = Book()
+b1.input_info("Начинаем программировать на>>> Python", "2022", "БВХ-Петербург", "Обучающая литература", "Тони Гэддис",
+              "1500 руб")
+b1.print_info()
+b1.set_title_book("Python3 Самое необходимое")
+print(b1.get_title_book())
+b1.set_year_production("2019")
+print(b1.get_year_production())
+b1.set_publisher("БВХ Санкт-Петербург")
+print(b1.get_publisher())
+b1.set_genre("Программирование")
+print(b1.get_genre())
+b1.set_author("Н.А. Прохоренок, В.А. Дронов")
+print(b1.get_author())
+b1.set_price("1000 руб")
+print(b1.get_price())
+print("=" * 40)
