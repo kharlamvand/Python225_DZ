@@ -500,80 +500,135 @@
 
 # Домашнее задание №22
 
-class Book:
-    title_book = "title_book"
-    year_production = "year_production"
-    publisher = "publisher"
-    genre = "genre"
-    author = "author"
-    price = "price"
+# class Book:
+#     title_book = "title_book"
+#     year_production = "year_production"
+#     publisher = "publisher"
+#     genre = "genre"
+#     author = "author"
+#     price = "price"
+#
+#     def print_info(self):
+#         print("=" * 40)
+#         print(f"Название книги: {self.title_book}\nГод выпуска: {self.year_production}\n"
+#               f"Издание: {self.publisher}\nЖанр: {self.genre}\nАвтор: {self.author}\n"
+#               f"Цена: {self.price}")
+#         print("=" * 40)
+#
+#     def input_info(self, title_book, year_production, publisher, genre, author, price):
+#         self.title_book = title_book
+#         self.year_production = year_production
+#         self.publisher = publisher
+#         self.genre = genre
+#         self.author = author
+#         self.price = price
+#
+#     def set_title_book(self, title_book):
+#         self.title_book = title_book
+#
+#     def get_title_book(self):
+#         return self.title_book
+#
+#     def set_year_production(self, year_production):
+#         self.year_production = year_production
+#
+#     def get_year_production(self):
+#         return self.year_production
+#
+#     def set_publisher(self, publisher):
+#         self.publisher = publisher
+#
+#     def get_publisher(self):
+#         return self.publisher
+#
+#     def set_genre(self, genre):
+#         self.genre = genre
+#
+#     def get_genre(self):
+#         return self.genre
+#
+#     def set_author(self, author):
+#         self.author = author
+#
+#     def get_author(self):
+#         return self.author
+#
+#     def set_price(self, price):
+#         self.price = price
+#
+#     def get_price(self):
+#         return self.price
+#
+#
+# b1 = Book()
+# b1.input_info("Начинаем программировать на>>> Python", "2022", "БВХ-Петербург", "Обучающая литература", "Тони Гэддис",
+#               "1500 руб")
+# b1.print_info()
+# b1.set_title_book("Python3 Самое необходимое")
+# print(b1.get_title_book())
+# b1.set_year_production("2019")
+# print(b1.get_year_production())
+# b1.set_publisher("БВХ Санкт-Петербург")
+# print(b1.get_publisher())
+# b1.set_genre("Программирование")
+# print(b1.get_genre())
+# b1.set_author("Н.А. Прохоренок, В.А. Дронов")
+# print(b1.get_author())
+# b1.set_price("1000 руб")
+# print(b1.get_price())
+# print("=" * 40)
 
-    def print_info(self):
-        print("=" * 40)
-        print(f"Название книги: {self.title_book}\nГод выпуска: {self.year_production}\n"
-              f"Издание: {self.publisher}\nЖанр: {self.genre}\nАвтор: {self.author}\n"
-              f"Цена: {self.price}")
-        print("=" * 40)
 
-    def input_info(self, title_book, year_production, publisher, genre, author, price):
-        self.title_book = title_book
-        self.year_production = year_production
-        self.publisher = publisher
-        self.genre = genre
-        self.author = author
-        self.price = price
-
-    def set_title_book(self, title_book):
-        self.title_book = title_book
-
-    def get_title_book(self):
-        return self.title_book
-
-    def set_year_production(self, year_production):
-        self.year_production = year_production
-
-    def get_year_production(self):
-        return self.year_production
-
-    def set_publisher(self, publisher):
-        self.publisher = publisher
-
-    def get_publisher(self):
-        return self.publisher
-
-    def set_genre(self, genre):
-        self.genre = genre
-
-    def get_genre(self):
-        return self.genre
-
-    def set_author(self, author):
-        self.author = author
-
-    def get_author(self):
-        return self.author
-
-    def set_price(self, price):
-        self.price = price
-
-    def get_price(self):
-        return self.price
+# Домашнее задание №23
+import math
 
 
-b1 = Book()
-b1.input_info("Начинаем программировать на>>> Python", "2022", "БВХ-Петербург", "Обучающая литература", "Тони Гэддис",
-              "1500 руб")
-b1.print_info()
-b1.set_title_book("Python3 Самое необходимое")
-print(b1.get_title_book())
-b1.set_year_production("2019")
-print(b1.get_year_production())
-b1.set_publisher("БВХ Санкт-Петербург")
-print(b1.get_publisher())
-b1.set_genre("Программирование")
-print(b1.get_genre())
-b1.set_author("Н.А. Прохоренок, В.А. Дронов")
-print(b1.get_author())
-b1.set_price("1000 руб")
-print(b1.get_price())
-print("=" * 40)
+class Rectangle:
+
+    def __init__(self, length=0, width=0):
+        self.__length = length
+        self.__width = width
+
+    def set_length(self, length):
+        if isinstance(length, int) or isinstance(length, float):
+            self.__length = length
+        else:
+            print("Длина должна быть числом")
+
+    def get_length(self):
+        return self.__length
+
+    def set_width(self, width):
+        if isinstance(width, int) or isinstance(width, float):
+            self.__width = width
+        else:
+            print("Ширина должна быть числом")
+
+    def get_width(self):
+        return self.__width
+
+    def getSquare(self):
+        return self.__length * self.__width
+
+    def getPerimeter(self):
+        return 2 * (self.__length + self.__width)
+
+    def getHypotenuse(self):
+        return math.sqrt(self.__length * self.__length + self.__width * self.__width)
+
+    def print_rectangle(self):
+        for i in range(self.__length):
+            for j in range(self.__width):
+                print("*", end="")
+            print()
+
+
+r1 = Rectangle()
+r1.set_length(3)
+r1.set_width(9)
+print(f"Длина прямоугольника: {r1.get_length()}")
+print(f"Ширина прямоугольника: {r1.get_width()}")
+print(f"Площадь прямоугольника: {r1.getSquare()}")
+print(f"Периметр прямоугольника: {r1.getPerimeter()}")
+print(f"Гипотенуза прямоугольника: {r1.getHypotenuse():.2f}")
+print(r1.print_rectangle())
