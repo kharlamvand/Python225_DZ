@@ -580,55 +580,80 @@
 
 
 # Домашнее задание №23
-import math
+# import math
+#
+#
+# class Rectangle:
+#
+#     def __init__(self, length=0, width=0):
+#         self.__length = length
+#         self.__width = width
+#
+#     def set_length(self, length):
+#         if isinstance(length, int) or isinstance(length, float):
+#             self.__length = length
+#         else:
+#             print("Длина должна быть числом")
+#
+#     def get_length(self):
+#         return self.__length
+#
+#     def set_width(self, width):
+#         if isinstance(width, int) or isinstance(width, float):
+#             self.__width = width
+#         else:
+#             print("Ширина должна быть числом")
+#
+#     def get_width(self):
+#         return self.__width
+#
+#     def getSquare(self):
+#         return self.__length * self.__width
+#
+#     def getPerimeter(self):
+#         return 2 * (self.__length + self.__width)
+#
+#     def getHypotenuse(self):
+#         return math.sqrt(self.__length * self.__length + self.__width * self.__width)
+#
+#     def print_rectangle(self):
+#         for i in range(self.__length):
+#             for j in range(self.__width):
+#                 print("*", end="")
+#             print()
+#
+#
+# r1 = Rectangle()
+# r1.set_length(3)
+# r1.set_width(9)
+# print(f"Длина прямоугольника: {r1.get_length()}")
+# print(f"Ширина прямоугольника: {r1.get_width()}")
+# print(f"Площадь прямоугольника: {r1.getSquare()}")
+# print(f"Периметр прямоугольника: {r1.getPerimeter()}")
+# print(f"Гипотенуза прямоугольника: {r1.getHypotenuse():.2f}")
+# print(r1.print_rectangle())
 
+# Домашнее задание №24
 
-class Rectangle:
+class Conveyor:
 
-    def __init__(self, length=0, width=0):
-        self.__length = length
-        self.__width = width
+    def __init__(self, wt):
+        self.__wt = wt
 
-    def set_length(self, length):
-        if isinstance(length, int) or isinstance(length, float):
-            self.__length = length
+    @property
+    def wt(self):
+        return self.__wt
+
+    @wt.setter
+    def wt(self, wt):
+        if isinstance(wt, int) or isinstance(wt, float):
+            self.__wt = wt
         else:
-            print("Длина должна быть числом")
-
-    def get_length(self):
-        return self.__length
-
-    def set_width(self, width):
-        if isinstance(width, int) or isinstance(width, float):
-            self.__width = width
-        else:
-            print("Ширина должна быть числом")
-
-    def get_width(self):
-        return self.__width
-
-    def getSquare(self):
-        return self.__length * self.__width
-
-    def getPerimeter(self):
-        return 2 * (self.__length + self.__width)
-
-    def getHypotenuse(self):
-        return math.sqrt(self.__length * self.__length + self.__width * self.__width)
-
-    def print_rectangle(self):
-        for i in range(self.__length):
-            for j in range(self.__width):
-                print("*", end="")
-            print()
+            print("Вес должен быть целочисленным или вещественным числом")
 
 
-r1 = Rectangle()
-r1.set_length(3)
-r1.set_width(9)
-print(f"Длина прямоугольника: {r1.get_length()}")
-print(f"Ширина прямоугольника: {r1.get_width()}")
-print(f"Площадь прямоугольника: {r1.getSquare()}")
-print(f"Периметр прямоугольника: {r1.getPerimeter()}")
-print(f"Гипотенуза прямоугольника: {r1.getHypotenuse():.2f}")
-print(r1.print_rectangle())
+c1 = Conveyor(12)
+print(f"12 кг => {c1.wt * 2.20462262185:.2f} фунтов")
+
+c2 = Conveyor(41)
+print(f"41 кг => {c2.wt * 2.20462262185:.3f} фунтов")
