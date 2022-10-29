@@ -1155,104 +1155,135 @@
 # print(c1["hour"], c1["min"], c1["sec"])
 
 # Домашнее задание №30
-import math
-from abc import ABC, abstractmethod
+# import math
+# from abc import ABC, abstractmethod
+#
+#
+# class Share(ABC):
+#     def __init__(self, color):
+#         self.color = color
+#
+#     @abstractmethod
+#     def perimeter(self):
+#         pass
+#
+#     @abstractmethod
+#     def square(self):
+#         pass
+#
+#     @abstractmethod
+#     def draw(self):
+#         pass
+#
+#
+# class Square(Share):
+#     def __init__(self, w, color):
+#         self.w = w
+#         super().__init__(color)
+#
+#     def perimeter(self):
+#         perimeter = self.w * 4
+#         return perimeter
+#
+#     def square(self):
+#         return self.w * self.w
+#
+#     def draw(self):
+#         return ('*' * self.w + '\n') * self.w
+#
+#     def info(self):
+#         print(f"===Квадрат===\nСторона: {self.w}\nЦвет: {self.color}\nПлощадь: {self.square()}\nПериметр:"
+#               f" {self.perimeter()}\n{self.draw()} ")
+#
+#
+# class Rectangle(Share):
+#     def __init__(self, w, h, color):
+#         self.w = w
+#         self.h = h
+#         super().__init__(color)
+#
+#     def perimeter(self):
+#         perimeter = self.w * 2 + self.h * 2
+#         return perimeter
+#
+#     def square(self):
+#         return self.w * self.h
+#
+#     def draw(self):
+#         return ('*' * self.h + '\n') * self.w
+#
+#     def info(self):
+#         print(
+#             f"===Квадрат===\nДлина: {self.w}\nШирина: {self.h}\nЦвет: {self.color}\nПлощадь: {self.square()}\nПериметр:"
+#             f" {self.perimeter()}\n{self.draw()} ")
+#
+#
+# class Triangle(Share):
+#     def __init__(self, w, h, l, color):
+#         self.w = w
+#         self.h = h
+#         self.l = l
+#         super().__init__(color)
+#
+#     def perimeter(self):
+#         return (self.w + self.h + self.l) / 2
+#
+#     def square(self):
+#         return self.w / 4 * math.sqrt(4 * self.h ** 2 - self.w ** 2)
+#
+#     def draw(self):
+#         rows = []
+#         for n in range(self.h):
+#             rows.append(" " * n + "*" * (self.w - 2 * n) + " " * n)
+#         print("\n".join(reversed(rows)))
+#
+#     def info(self):
+#         print(
+#             f"===Треугольник===\nСторона 1: {self.w}\nСторона 2: {self.h}\nСторона 3: {self.l}\nЦвет: {self.color}\nПлощадь: {self.square(): .2f}\nПериметр:"
+#             f" {self.perimeter()}")
+#
+#
+# s = Square(3, 'red')
+# s.info()
+# r = Rectangle(3, 7, 'green')
+# r.info()
+# t = Triangle(11, 6, 6, 'yellow')
+# t.info()
+#
+# a = (s, r, t)
+# for i in a:
+#     i.draw()
+
+# Домашнее задание №31
 
 
-class Share(ABC):
-    def __init__(self, color):
-        self.color = color
+class OldOrder:
+    def __set_name__(self, owner, name):
+        self.__name = name
 
-    @abstractmethod
-    def perimeter(self):
-        pass
+    def __get__(self, instance, owner):
+        return instance.__dict__[self.__name]
 
-    @abstractmethod
-    def square(self):
-        pass
-
-    @abstractmethod
-    def draw(self):
-        pass
+    def __set__(self, instance, value):
+        if value <= 0:
+            raise ValueError(f"{self.__name} число должно быть положительным")
+        instance.__dict__[self.__name] = value
 
 
-class Square(Share):
-    def __init__(self, w, color):
-        self.w = w
-        super().__init__(color)
+class Order:
+    price = OldOrder()
+    amount = OldOrder()
 
-    def perimeter(self):
-        perimeter = self.w * 4
-        return perimeter
+    def __init__(self, name, price, amount):
+        self.name = name
+        self.price = price
+        self.amount = amount
 
-    def square(self):
-        return self.w * self.w
-
-    def draw(self):
-        return ('*' * self.w + '\n') * self.w
-
-    def info(self):
-        print(f"===Квадрат===\nСторона: {self.w}\nЦвет: {self.color}\nПлощадь: {self.square()}\nПериметр:"
-              f" {self.perimeter()}\n{self.draw()} ")
+    def sum(self):
+        return self.price * self.amount
 
 
-class Rectangle(Share):
-    def __init__(self, w, h, color):
-        self.w = w
-        self.h = h
-        super().__init__(color)
-
-    def perimeter(self):
-        perimeter = self.w * 2 + self.h * 2
-        return perimeter
-
-    def square(self):
-        return self.w * self.h
-
-    def draw(self):
-        return ('*' * self.h + '\n') * self.w
-
-    def info(self):
-        print(
-            f"===Квадрат===\nДлина: {self.w}\nШирина: {self.h}\nЦвет: {self.color}\nПлощадь: {self.square()}\nПериметр:"
-            f" {self.perimeter()}\n{self.draw()} ")
-
-
-class Triangle(Share):
-    def __init__(self, w, h, l, color):
-        self.w = w
-        self.h = h
-        self.l = l
-        super().__init__(color)
-
-    def perimeter(self):
-        return (self.w + self.h + self.l) / 2
-
-    def square(self):
-        return self.w / 4 * math.sqrt(4 * self.h ** 2 - self.w ** 2)
-
-    def draw(self):
-        rows = []
-        for n in range(self.h):
-            rows.append(" " * n + "*" * (self.w - 2 * n) + " " * n)
-        print("\n".join(reversed(rows)))
-
-    def info(self):
-        print(
-            f"===Треугольник===\nСторона 1: {self.w}\nСторона 2: {self.h}\nСторона 3: {self.l}\nЦвет: {self.color}\nПлощадь: {self.square(): .2f}\nПериметр:"
-            f" {self.perimeter()}")
-
-
-s = Square(3, 'red')
-s.info()
-r = Rectangle(3, 7, 'green')
-r.info()
-t = Triangle(11, 6, 6, 'yellow')
-t.info()
-
-a = (s, r, t)
-for i in a:
-    i.draw()
-
-
+o = Order('apple', 5, 10)
+print(f'Тест:\nOrder ({o.name}, {o.price}, {o.amount})')
+print(o.sum())
 
