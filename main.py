@@ -1257,33 +1257,79 @@
 # Домашнее задание №31
 
 
-class OldOrder:
+# class OldOrder:
+#     def __set_name__(self, owner, name):
+#         self.__name = name
+#
+#     def __get__(self, instance, owner):
+#         return instance.__dict__[self.__name]
+#
+#     def __set__(self, instance, value):
+#         if value <= 0:
+#             raise ValueError(f"{self.__name} число должно быть положительным")
+#         instance.__dict__[self.__name] = value
+#
+#
+# class Order:
+#     price = OldOrder()
+#     amount = OldOrder()
+#
+#     def __init__(self, name, price, amount):
+#         self.name = name
+#         self.price = price
+#         self.amount = amount
+#
+#     def sum(self):
+#         return self.price * self.amount
+#
+#
+# o = Order('apple', 5, 10)
+# print(f'Тест:\nOrder ({o.name}, {o.price}, {o.amount})')
+# print(o.sum())
+
+# Домашнее задание №32
+class Number:
+    @classmethod
+    def verify(cls, coord):
+        if not isinstance(coord, int) or coord <= 0:
+            raise TypeError(f"Координата {coord} должна быть положительным целым числом")
+
     def __set_name__(self, owner, name):
-        self.__name = name
+        self.name = "_" + name
 
     def __get__(self, instance, owner):
-        return instance.__dict__[self.__name]
+        return getattr(instance, self.name)
 
     def __set__(self, instance, value):
-        if value <= 0:
-            raise ValueError(f"{self.__name} число должно быть положительным")
-        instance.__dict__[self.__name] = value
+        self.verify(value)
+        setattr(instance, self.name, value)
 
 
-class Order:
-    price = OldOrder()
-    amount = OldOrder()
+class Triangle:
+    a = Number()
+    b = Number()
+    c = Number()
 
-    def __init__(self, name, price, amount):
-        self.name = name
-        self.price = price
-        self.amount = amount
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
 
-    def sum(self):
-        return self.price * self.amount
+    def existence(self):
+        if (self.a + self.b > self.c) and (self.a + self.c > self.b) and (self.b + self.c > self.a):
+            return "существует"
+        else:
+            return "не существует"
+
+    def info(self):
+        print(f"Треугольник со сторонами ({self.a}, {self.b}, {self.c}) {self.existence()}")
 
 
-o = Order('apple', 5, 10)
-print(f'Тест:\nOrder ({o.name}, {o.price}, {o.amount})')
-print(o.sum())
+t1 = Triangle(2, 5, 6)
+t2 = Triangle(5, 2, 8)
+t3 = Triangle(7, 3, 6)
+
+tr = [t1, t2, t3]
+for i in tr:
+    i.info()
 
