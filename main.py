@@ -1350,42 +1350,101 @@
 
 # Домашнее задание №34
 
-import json
+# import json
+#
+# from random import choice
+#
+#
+# def gen_person():
+#     name = ''
+#     tel = ''
+#
+#     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+#     nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+#
+#     while len(name) != 7:
+#         name += choice(letters)
+#
+#     while len(tel) != 10:
+#         tel += choice(nums)
+#
+#     person = {
+#         'name': name,
+#         'tel': tel
+#     }
+#     return person, tel
+#
+#
+# def write_json(person_dict, num):
+#     try:
+#         data = json.load(open('persons.json'))
+#     except FileNotFoundError:
+#         data = {}
+#
+#     data[num] = person_dict
+#
+#     with open('persons.json', 'w') as f:
+#         json.dump(data, f, indent=2)
+#
+#
+# for i in range(5):
+#     write_json(gen_person()[0], gen_person()[1])
 
-from random import choice
+# Домашнее задание №35
+# import json
+#
+#
+# class State:
+#     def __init__(self, country, capital):
+#         self.country = country
+#         self.capital = capital
+#
+#     def __str__(self):
+#         return f"{self.country} : {self.capital}"
+#
+#     def add_capital(self, capital):
+#         self.capital.append(capital)
+#
+#     def delete_country(self, index):
+#         self.capital.pop(index)
+#
+#     def edit_capital(self, index, new_capital):
+#         self.capital[index] = new_capital
+#
+#
+# @classmethod
+# def dump_to_json(cls, stat, filename):
+#     try:
+#         data = json.load(open(filename))
+#     except FileNotFoundError:
+#         data = []
+#
+#     data.append({'country': stat.country, 'capital': stat.capital})
+#     with open(filename, 'w') as f:
+#         json.dump(data, f, indent=2)
+#
+#
+# @classmethod
+# def load_from_file(cls, filename):
+#     with open(filename, 'r') as f:
+#         print(json.load(f))
+#
+#
+# print('==================================================')
+#
+# s1 = State('Россия', 'Москва')
+# print(s1)
+# s2 = State('Италия', 'Рим')
+# print(s2)
+# # State.load_from_file('state.json')
+# State.dump_to_json(s1, 'state.json')
+
+# Домашнее задание №36
+import csv
+
+with open('data2.csv', 'r') as f:
+    reader = csv.reader(f, delimiter=';')
+    for row in reader:
+        print(row)
 
 
-def gen_person():
-    name = ''
-    tel = ''
-
-    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
-    nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-
-    while len(name) != 7:
-        name += choice(letters)
-
-    while len(tel) != 10:
-        tel += choice(nums)
-
-    person = {
-        'name': name,
-        'tel': tel
-    }
-    return person, tel
-
-
-def write_json(person_dict, num):
-    try:
-        data = json.load(open('persons.json'))
-    except FileNotFoundError:
-        data = {}
-
-    data[num] = person_dict
-
-    with open('persons.json', 'w') as f:
-        json.dump(data, f, indent=2)
-
-
-for i in range(5):
-    write_json(gen_person()[0], gen_person()[1])
