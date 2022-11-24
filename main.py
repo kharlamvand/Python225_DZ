@@ -1440,11 +1440,48 @@
 # State.dump_to_json(s1, 'state.json')
 
 # Домашнее задание №36
+# import csv
+#
+# with open('data2.csv', 'r') as f:
+#     reader = csv.reader(f, delimiter=';')
+#     for row in reader:
+#         print(row)
+
+# Домашнее задание №37
+from bs4 import BeautifulSoup
+import requests
 import csv
 
-with open('data2.csv', 'r') as f:
-    reader = csv.reader(f, delimiter=';')
-    for row in reader:
-        print(row)
+
+def get_html(url):
+    r = requests.get(url)
+    return r.text
 
 
+def write_csv(data):
+    with open('news.csv', 'a') as f:
+        writer = csv.writer(f, lineterminator="\r", delimiter=";")
+        writer.writerow((data['name'], data['url'], data['rating']))
+
+
+def get_data(html):
+    soup = BeautifulSoup(html, 'lxml')
+    p1 = soup.find('section', class_="clearfix")
+    news = p1.find_all('article')
+
+    for new in news:
+        name = new.find("h2").text
+        url = new.find("h2").find("a").get('href')
+        rating = new.find("span", class_="thecomment").find("a").text
+
+        data = {'name': name, 'url': url, 'rating': rating}
+        write_csv(data)
+
+
+def main():
+    url = "https://losst.pro/terminal"
+    get_data(get_html(url))
+
+
+if __name__ == '__main__':
+    main()
