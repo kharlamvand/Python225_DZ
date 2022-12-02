@@ -1,0 +1,110 @@
+Новость № 1
+
+Название: 
+
+Установка офисного пакета FreeOfice 2021 из тарболла в Ubuntu 22.04
+
+
+Ссылка: https://compizomania.blogspot.com/2022/11/freeofice-2021-ubuntu-2204.html
+Автор: Владимир Маслов
+
+********************
+Новость № 2
+
+Название: 
+
+⚡️  ⚡️ Ошибка - E: Для пакета «xxxxxxxxxx» не найден кандидат на установку - Ubuntu 22.04 ⚡️  ⚡️
+
+
+Ссылка: https://compizomania.blogspot.com/2022/10/e-xxxxxxxxxx-ubuntu-2204.html
+Автор: Владимир Маслов
+
+********************
+Новость № 3
+
+Название: 
+
+Установка и простая настройка Tor и браузера Firefox в Linux для доступа к сайтам с ограниченным доступом (на примере Ubuntu)
+
+
+Ссылка: https://compizomania.blogspot.com/2022/09/tor-firefox-linux-ubuntu.html
+Автор: Владимир Маслов
+
+********************
+Новость № 4
+
+Название: 
+
+Утилита захвата экрана устройств Android, его отображения и записи - scrcpy в Ubuntu/Linux Mint
+
+
+Ссылка: https://compizomania.blogspot.com/2022/08/android-scrcpy-ubuntu-linux-mint.html
+Автор: Владимир Маслов
+
+********************
+Новость № 5
+
+Название: 
+
+ Установка эмулятора аппаратного обеспечения различных платформ QEMU и гиппервизора KVM и работа с ними в консольно-терминальном режиме (продолжение) в Ubuntu/Linux Mint ⚡️  ⚡️
+
+
+Ссылка: https://compizomania.blogspot.com/2022/07/qemu-kvm-ubuntu-linux-mint.html
+Автор: Владимир Маслов
+
+********************
+Новость № 6
+
+Название: 
+
+Установка мессендера ICQ в Ubuntu/Linux Mint ⚡️  ⚡️
+
+
+Ссылка: https://compizomania.blogspot.com/2022/06/icq-ubuntu-linux-mint.html
+Автор: Владимир Маслов
+
+********************
+Новость № 7
+
+Название: 
+
+Установка утилиты скачивания видео с различных ресурсов yt-dlp в Ubuntu/Linux Mint ⚡️  ⚡️
+
+
+Ссылка: https://compizomania.blogspot.com/2022/06/yt-dlp-ubuntu-linux-mint.html
+Автор: Владимир Маслов
+
+********************
+Новость № 8
+
+Название: 
+
+Ubuntu 22.04 'Jammy Jellyfish' после установки
+
+
+Ссылка: https://compizomania.blogspot.com/2022/04/ubuntu-2204-jammy-jellyfish.html
+Автор: Владимир Маслов
+
+********************
+Новость № 9
+
+Название: 
+
+Установка утилиты создания загрузочных USB-носителей Ventoy из ISO/WIM/IMG/VHD(x)/EFI-файлов в Linux ⚡️  ⚡️
+
+
+Ссылка: https://compizomania.blogspot.com/2022/04/usb-ventoy-isowimimgvhdxefi-linux.html
+Автор: Владимир Маслов
+
+********************
+Новость № 10
+
+Название: 
+
+Установка Ctlos Linux, основанный и базирующийся на Arch Linux ⚡️
+
+
+Ссылка: https://compizomania.blogspot.com/2022/03/ctlos-linux-arch-linux.html
+Автор: Владимир Маслов
+
+********************
