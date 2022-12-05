@@ -1648,13 +1648,16 @@
 #         break
 
 # Домашнее задание №39
-from parse import Parser
+# from parse import Parser
+#
+#
+# def main():
+#     pars = Parser("https://compizomania.blogspot.com/", "news.txt")
+#     pars.run()
+#
+#
+# if __name__ == '__main__':
+#     main()
 
 
-def main():
-    pars = Parser("https://compizomania.blogspot.com/", "news.txt")
-    pars.run()
 
-
-if __name__ == '__main__':
-    main()
