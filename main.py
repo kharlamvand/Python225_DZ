@@ -1660,4 +1660,6 @@
 #     main()
 
 
+# Домашнее задание №41
+# https://github.com/kharlamvand/Python225_DZ/blob/master/DZ_41.txt
 
