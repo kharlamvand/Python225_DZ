@@ -1660,6 +1660,23 @@
 #     main()
 
 
-# Домашнее задание №41
-# https://github.com/kharlamvand/Python225_DZ/blob/master/DZ_41.txt
+# Домашнее задание №46
+
+import sqlite3 as sq
+
+with sq.connect("fruit.db") as con:
+    cur = con.cursor()
+    cur.execute("""
+    CREATE TABLE IF NOT EXISTS fruit (
+        fruit_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        fruit_name TEXT,
+        price INTEGER
+    )
+    """)
+
+    cur.execute("INSERT INTO fruit VALUES(1, 'Яблоко', 20)")
+    cur.execute("INSERT INTO fruit VALUES(2, 'Мандарин', 23)")
+    cur.execute("INSERT INTO fruit VALUES(3, 'Апельсин', 37)")
+    cur.execute("INSERT INTO fruit VALUES(4, 'Слива', 17)")
+    cur.execute("INSERT INTO fruit VALUES(5, 'Арбуз', 43)")
 
